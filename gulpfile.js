@@ -800,7 +800,7 @@ gulp.task('minified-post', gulp.series('minified-pre', function (done) {
   var optsForHugeFile = { compress: { sequences: false, }, };
 
   fs.writeFileSync(MINIFIED_DIR + '/web/pdf.viewer.js',
-                   Terser.minify(viewerFiles).code);
+                   Terser.minify(viewerFiles, { compress: false, output: { beautify: true }, mangle: false, toplevel: false}).code);
   fs.writeFileSync(MINIFIED_DIR + '/build/pdf.min.js',
                    Terser.minify(pdfFile).code);
   fs.writeFileSync(MINIFIED_DIR + '/build/pdf.worker.min.js',

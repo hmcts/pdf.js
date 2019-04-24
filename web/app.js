@@ -285,6 +285,8 @@ let PDFViewerApplication = {
    * @private
    */
   async _initializeViewerComponents() {
+    console.log('XXX _initializeViewerComponents');
+
     const appConfig = this.appConfig;
 
     this.overlayManager = new OverlayManager();
